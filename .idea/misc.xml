@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/zapateria/app/src/main/res/layout/activity_home.xml" value="0.4" />
+        <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/zapateria/app/src/main/res/drawable/botones1.xml" value="0.1375" />
+        <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/zapateria/app/src/main/res/drawable/botones2.xml" value="0.1" />
+        <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/zapateria/app/src/main/res/drawable/texto.xml" value="0.1" />
+        <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/zapateria/app/src/main/res/layout/activity_home.xml" value="0.2" />
+        <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/zapateria/app/src/main/res/layout/activity_login.xml" value="0.15648148148148147" />
         <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/zapateria/app/src/main/res/layout/activity_main.xml" value="0.22327898550724637" />
       </map>
     </option>

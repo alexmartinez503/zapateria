@@ -4,15 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".HomeActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Hola Bienvenido a Adoc"
-        android:textColor="@color/purple_700"
+        android:text="BIENVENIDOS A ADOC"
+        android:textAlignment="center"
+        android:layout_marginTop="30dp"
         android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        />
+
+
+
+    <Button
+        android:layout_centerVertical="true"
+        android:id="@+id/botonusuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:text="USUARIO"
+        android:background="@drawable/botones1"
+        android:textColor="@color/white"
+        android:layout_above="@+id/botonadministrador"
+        />
+
+    <Button
+
+        android:id="@+id/botonadministrador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:text="ADMINISTRADOR"
+        android:background="@drawable/botones1"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="29dp"
+        />
+
+
+
 
 </RelativeLayout>
