@@ -19,37 +19,37 @@
         />
 
 
-
     <Button
-        android:layout_centerVertical="true"
         android:id="@+id/botonusuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_above="@+id/botonadministrador"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/black"
         android:padding="10dp"
         android:text="USUARIO"
-        android:background="@drawable/botones1"
-        android:textColor="@color/white"
-        android:layout_above="@+id/botonadministrador"
-        />
+        android:textColor="@color/white" />
 
     <Button
 
         android:id="@+id/botonadministrador"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="29dp"
+        android:layout_marginBottom="53dp"
+        android:background="@drawable/black"
         android:padding="10dp"
         android:text="ADMINISTRADOR"
-        android:background="@drawable/botones1"
-        android:textColor="@color/white"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="100dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="29dp"
-        />
-
-
+        android:textColor="@color/white" />
 
 
 </RelativeLayout>
