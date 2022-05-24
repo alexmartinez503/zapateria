@@ -8,8 +8,12 @@
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/drawable/botones1.xml" value="0.2595" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/drawable/botones2.xml" value="0.2595" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/drawable/buttomblack.xml" value="0.2" />
+        <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/drawable/deporte_background.xml" value="0.2595" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/drawable/ic_launcher_background.xml" value="0.124" />
+        <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_casuales.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_categorias.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_deporte2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_formales.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_loginadmin.xml" value="0.25416666666666665" />
