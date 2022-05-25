@@ -29,7 +29,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="30dp"
-        android:background="@drawable/black"
+        android:background="@drawable/botones1"
         android:padding="10dp"
         android:text="USUARIO"
         android:textColor="@color/white" />
@@ -46,7 +46,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginRight="29dp"
         android:layout_marginBottom="53dp"
-        android:background="@drawable/black"
+        android:background="@drawable/botones1"
         android:padding="10dp"
         android:text="ADMINISTRADOR"
         android:textColor="@color/white" />
