@@ -21,17 +21,18 @@ public class categoriasActivity extends AppCompatActivity {
         btnformal=findViewById(R.id.btnformal);
 
 
-        btndeportivo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent= new Intent(categoriasActivity.this, deporteActivity2.class);
-                startActivity(intent);
-            }
-        });
+       btndeportivo.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(categoriasActivity.this, deportivoActivity.class);
+               startActivity(intent);
+           }
+       });
+
         btncasual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(categoriasActivity.this, casualesActivity.class);
+                Intent intent= new Intent(categoriasActivity.this, CasualActivity.class);
                 startActivity(intent);
             }
         });
@@ -39,7 +40,7 @@ public class categoriasActivity extends AppCompatActivity {
         btnformal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(categoriasActivity.this, formalesActivity2.class);
+                Intent intent= new Intent(categoriasActivity.this, formalActivity.class);
                 startActivity(intent);
             }
         });

@@ -1,21 +1,19 @@
 package com.example.zapateria;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -108,9 +106,9 @@ public class LoginadminActivity extends AppCompatActivity {
             @Override
             public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken token) {
                 VerificacionID = s;
-                 resendingToken= token;
-                 dialog.dismiss();
-                 Toast.makeText(LoginadminActivity.this, "Codigo enviado satisfactoriamente, Revisa tu bandeja de entrada", Toast.LENGTH_SHORT).show();
+                resendingToken= token;
+                dialog.dismiss();
+                Toast.makeText(LoginadminActivity.this, "Codigo enviado satisfactoriamente, Revisa tu bandeja de entrada", Toast.LENGTH_SHORT).show();
                 numeroadmin.setVisibility(View.GONE);
                 enviarnumeroadmin.setVisibility(View.GONE);
                 codigoadmin.setVisibility(View.VISIBLE);
@@ -143,15 +141,15 @@ public class LoginadminActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         FirebaseUser firebaseUser = auth.getCurrentUser();
-        if (firebaseUser != null);
-           EnviarlaPrincipal();
+        if (firebaseUser != null) {
+            EnviarlaPrincipal();
+        }
     }
 
     private void EnviarlaPrincipal() {
-        Intent intent = new Intent(LoginadminActivity.this, PrincipalActivity.class);
+        Intent intent = new Intent(LoginadminActivity.this, datosadminActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.putExtra("phone", phoneNumber);
         startActivity(intent);
-        finish();
     }
 }

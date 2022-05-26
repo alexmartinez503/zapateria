@@ -3,11 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Andys/AndroidStudioProjects/Zapateria2.0/zapateria/app/src/main/res/drawable/texto.xml" value="0.1945" />
-        <entry key="..\:/Users/Andys/AndroidStudioProjects/Zapateria2.0/zapateria/app/src/main/res/layout/activity_home.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/Andys/AndroidStudioProjects/Zapateria2.0/zapateria/app/src/main/res/layout/activity_login.xml" value="0.15534420289855072" />
-        <entry key="..\:/Users/Andys/AndroidStudioProjects/Zapateria2.0/zapateria/app/src/main/res/layout/activity_loginadmin.xml" value="0.22" />
-        <entry key="..\:/Users/Andys/AndroidStudioProjects/Zapateria2.0/zapateria/app/src/main/res/layout/activity_principal.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.124" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/drawable/black.xml" value="0.2385" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/drawable/botones1.xml" value="0.2595" />
@@ -15,14 +10,20 @@
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/drawable/buttomblack.xml" value="0.2" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/drawable/deporte_background.xml" value="0.2595" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/drawable/ic_launcher_background.xml" value="0.124" />
+        <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_admin_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_casual.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_casuales.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_categorias.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_datosadmin.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_deporte2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_deportivo.xml" value="0.25" />
+        <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_formal.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_formales.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_loginadmin.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_principal.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/marti/AndroidStudioProjects/zapateria/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
       </map>
     </option>

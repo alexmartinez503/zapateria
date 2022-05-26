@@ -17,6 +17,7 @@
         android:textStyle="bold"
         android:textSize="20dp"
         android:textColor="@color/purple_500"/>
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imagen1"
         android:layout_width="150dp"
@@ -24,7 +25,8 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/texto1"
         android:layout_marginTop="5dp"
-        android:src="@drawable/welcome"/>
+        android:src="@drawable/home"
+        tools:ignore="MissingClass" />
 
     <EditText
         android:id="@+id/numeroadmin"
@@ -39,7 +41,7 @@
         android:background="@drawable/texto"
         android:hint="Ingrese su numero"
         android:padding="10dp"
-        android:inputType="number"
+        android:inputType="phone"
         android:textStyle="bold"
         android:textSize="18dp"/>
     <EditText
