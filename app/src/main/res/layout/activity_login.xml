@@ -13,21 +13,21 @@
         android:id="@+id/titilo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:padding="10dp"
         android:text="LOGIN"
+        android:background="#1E3B55"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="25dp"
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="45dp"
-        tools:srcCompat="@drawable/login1" />
+        android:id="@+id/imageView8"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        app:srcCompat="@drawable/login1" />
+
+
 
     <EditText
         android:id="@+id/txtcorreo"
