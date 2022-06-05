@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -24,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText txtpassword;
     private Button loginbtn;
     private Button registrobtn;
+    private String correo="", password1="";
 
     private FirebaseAuth mAuth;
 
@@ -39,6 +41,11 @@ public class LoginActivity extends AppCompatActivity {
         mAuth= FirebaseAuth.getInstance();
 
 
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null){
+            correo = bundle.getString("correo");
+            password1= bundle.getString("password1");
+        }
         //llammos las clases para los diferentes botones
 
         //clase de boton de login
@@ -75,7 +82,10 @@ public class LoginActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
                         Toast.makeText(LoginActivity.this, "Bienvenid@", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(LoginActivity.this, categoriasActivity.class));
+                        Intent intent = new Intent(LoginActivity.this, ListatoZapatosActivity.class);
+                        intent.putExtra("correo", mail);
+                        intent.putExtra("password1", password);
+                        startActivity(intent);
                     }else{
                         Log.w("TAG","Error", task.getException());
                     }

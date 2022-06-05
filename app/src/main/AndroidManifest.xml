@@ -14,22 +14,20 @@
         android:theme="@style/Theme.Zapateria"
         tools:targetApi="31">
         <activity
+            android:name=".confirmarPedidoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CarritoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListatoZapatosActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Zapateria.NoActionBar" />
+        <activity
             android:name=".adminLoginActivity"
             android:exported="false" />
         <activity
             android:name=".datosadminActivity"
-            android:exported="false" />
-        <activity
-            android:name=".formalActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CasualActivity"
-            android:exported="false" />
-        <activity
-            android:name=".deportivoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".categoriasActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"

@@ -22,7 +22,7 @@ public class HomeActivity extends AppCompatActivity {
         botonusuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+                Intent intent = new Intent(HomeActivity.this, ListatoZapatosActivity.class);
                 startActivity(intent);
 
             }

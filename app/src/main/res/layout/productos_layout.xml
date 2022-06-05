@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginTop="20dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    app:cardMaxElevation="15dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/producto1_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre del producto"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            />
+        <ImageView
+            android:id="@+id/img_product1"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/producto1_name"
+            android:scaleType="centerCrop"
+            android:src="@drawable/depo"
+            android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/description_product1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="descripcion"
+            android:textSize="18dp"
+            android:layout_marginBottom="7dp"
+            android:textColor="@color/black"
+            android:layout_below="@+id/img_product1"
+            android:textAlignment="center"/>
+        <TextView
+            android:id="@+id/cantidad_product1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cantidad: 000"
+            android:textSize="20dp"
+            android:layout_marginStart="40dp"
+            android:textColor="@color/black"
+            android:layout_below="@+id/description_product1"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/precio_product1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Precio:"
+            android:textSize="25dp"
+            android:layout_marginStart="50dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_toEndOf="@+id/cantidad_product1"
+            android:layout_below="@+id/description_product1"
+            android:textAlignment="center"/>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

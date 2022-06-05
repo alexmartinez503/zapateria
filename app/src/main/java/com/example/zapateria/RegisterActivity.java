@@ -3,6 +3,7 @@ package com.example.zapateria;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,6 +17,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -29,10 +32,13 @@ public class RegisterActivity extends AppCompatActivity {
     private  EditText txtcorreo;
     private EditText txtpass;
     private Button btnregistro;
+    private  String correo= "", password1="";
+    private ProgressDialog dialog;
 
     private String userID;
     private FirebaseAuth mAuth;
-    private FirebaseFirestore db;
+   // private FirebaseFirestore db;
+    private DatabaseReference userRef;
 
 
     @Override
@@ -46,11 +52,20 @@ public class RegisterActivity extends AppCompatActivity {
         btnregistro= findViewById(R.id.registerbtn);
 
         mAuth= FirebaseAuth.getInstance();
-        db=FirebaseFirestore.getInstance();
+        //db=FirebaseFirestore.getInstance();
+        userID = mAuth.getCurrentUser().getUid();
+        userRef = FirebaseDatabase.getInstance().getReference().child("users1");
+        dialog= new ProgressDialog(this);
 
         btnregistro.setOnClickListener(view ->{
             createUser();
         });
+
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null){
+            correo = bundle.getString("correo");
+            password1= bundle.getString("password1");
+        }
 
     }
 
@@ -73,32 +88,37 @@ public class RegisterActivity extends AppCompatActivity {
             txtpass.setError("ingrese su contraseña");
             txtpass.requestFocus();
         }else {
-            mAuth.createUserWithEmailAndPassword(mail,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            dialog.setTitle("Guardando");
+            dialog.setMessage("Por favor espere..");
+            dialog.show();
+            dialog.setCanceledOnTouchOutside(true);
+
+            HashMap map= new HashMap();
+            map.put("nombre", name);
+            map.put("telefono", phone);
+            map.put("correo",mail);
+            map.put("contraseña", password);
+            map.put("id",userID);
+
+            userRef.child(userID).updateChildren(map).addOnCompleteListener(new OnCompleteListener() {
                 @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
+                public void onComplete(@NonNull Task task) {
                     if (task.isSuccessful()){
-                        userID = mAuth.getCurrentUser().getUid();
-                        DocumentReference documentReference = db.collection("users").document(userID);
-
-                        Map<String,Object> user=new HashMap<>();
-                        user.put("Nombre", name);
-                        user.put("Telefono",phone);
-                        user.put("Correo", mail);
-                        user.put("Contraseña", password);
-
-                        documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void unused) {
-                                Log.d("TAG", "onSuccess: Datos Registrados"+ userID);
-                            }
-                        });
-                        Toast.makeText(RegisterActivity.this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                        Intent intent= new Intent(RegisterActivity.this, ListatoZapatosActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        intent.putExtra("correo", mail);
+                        intent.putExtra("password1", password);
+                        startActivity(intent);
+                        finish();
+                        dialog.dismiss();
                     }else {
-                        Toast.makeText(RegisterActivity.this, "Usuario no Registrado"+ task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                        String mensaje = task.getException().toString();
+                        Toast.makeText(RegisterActivity.this, "error"+mensaje, Toast.LENGTH_SHORT).show();
                     }
                 }
             });
+
         }
     }
+
 }
