@@ -145,11 +145,13 @@ public class adminLoginActivity extends AppCompatActivity {
     }*/
 
     private void EnviaralaPrincipal() {
-        Intent intent = new Intent(adminLoginActivity.this,datosadminActivity.class);
+        Intent intent = new Intent(adminLoginActivity.this,AdminActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.putExtra("phone",phoneNumber);
         startActivity(intent);
         finish();
     }
+
+
 
 }
