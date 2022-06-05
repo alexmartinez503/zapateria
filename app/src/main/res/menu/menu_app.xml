@@ -8,32 +8,32 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/carrito"
+            android:id="@+id/menu_carrito"
             android:icon="@drawable/card"
             android:title="Carrito"
             />
         <item
-            android:id="@+id/categoria"
+            android:id="@+id/menu_categoria"
             android:icon="@drawable/list"
             android:title="Categoria"
 
             />
 
         <item
-            android:id="@+id/Buscar_pedido"
+            android:id="@+id/menu_Buscar_pedido"
             android:icon="@drawable/buscar"
             android:title="Buscar"
 
             />
 
         <item
-            android:id="@+id/usuario"
+            android:id="@+id/menu_usuario"
             android:icon="@drawable/user"
             android:title="Perfil"
 
             />
         <item
-            android:id="@+id/salir"
+            android:id="@+id/menu_salir"
             android:icon="@drawable/exit"
             android:title="Salir"
 

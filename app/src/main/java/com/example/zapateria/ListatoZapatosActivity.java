@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -59,7 +62,7 @@ public class ListatoZapatosActivity extends AppCompatActivity {
                 if (!snapshot.hasChild(userID)){
                     enviarRegistro();
                 }else {
-                    enviarLogin();
+
                 }
             }
 
@@ -70,6 +73,59 @@ public class ListatoZapatosActivity extends AppCompatActivity {
         });
     }
 
+    //opciones de menu .....
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.menu_app,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        super.onOptionsItemSelected(item);
+        if(item.getItemId() == R.id.menu_carrito){
+
+            activityCarrito();
+        }
+        if(item.getItemId() == R.id.menu_categoria){
+            activityCategoria();
+        }
+        if(item.getItemId() == R.id.menu_Buscar_pedido){
+            activityBuscar();
+        }
+        if(item.getItemId() == R.id.menu_usuario){
+            activityUsuario();
+        }
+        if(item.getItemId() == R.id.menu_salir){
+            auth.signOut();
+        }
+
+
+        return true;
+    }
+
+
+    private void activityUsuario() {
+
+
+        Intent intent = new Intent(ListatoZapatosActivity.this, usuarioActivity.class);
+        startActivity(intent);
+    }
+
+    private void activityBuscar() {
+    }
+
+    private void activityCategoria() {
+    }
+
+    private void activityCarrito() {
+
+    }
+
+    //fin de las opciones de menu
     private void enviarRegistro() {
         Intent intent = new Intent(ListatoZapatosActivity.this, RegisterActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

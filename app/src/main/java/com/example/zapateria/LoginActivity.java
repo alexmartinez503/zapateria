@@ -17,6 +17,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
 
@@ -26,6 +29,8 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginbtn;
     private Button registrobtn;
     private String correo="", password1="";
+    private DatabaseReference userRef;
+    private String userID;
 
     private FirebaseAuth mAuth;
 
@@ -39,7 +44,6 @@ public class LoginActivity extends AppCompatActivity {
         registrobtn=findViewById(R.id.registrobtn);
 
         mAuth= FirebaseAuth.getInstance();
-
 
         Bundle bundle = getIntent().getExtras();
         if(bundle != null){
@@ -77,19 +81,19 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(LoginActivity.this, "ingrese su contraseña", Toast.LENGTH_SHORT).show();
             txtpassword.requestFocus();
         }else{
-            mAuth.signInWithEmailAndPassword(mail,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            userRef.child("users1").child(userID).child("id").setValue(mail,password);
+            userRef.child("users1").child(userID).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                 @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
-                        Toast.makeText(LoginActivity.this, "Bienvenid@", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(LoginActivity.this, ListatoZapatosActivity.class);
-                        intent.putExtra("correo", mail);
-                        intent.putExtra("password1", password);
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        Intent intent= new Intent(LoginActivity.this, ListatoZapatosActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
-                    }else{
-                        Log.w("TAG","Error", task.getException());
+                        finish();
                     }
-
+                    else {
+                        Log.e("firebase", "Error getting data", task.getException());
+                    }
                 }
             });
         }

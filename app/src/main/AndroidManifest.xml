@@ -18,6 +18,9 @@
         android:theme="@style/Theme.Zapateria"
         tools:targetApi="31">
         <activity
+            android:name=".usuarioActivity"
+            android:exported="false" />
+        <activity
             android:name=".confirmarPedidoActivity"
             android:exported="false" />
         <activity
