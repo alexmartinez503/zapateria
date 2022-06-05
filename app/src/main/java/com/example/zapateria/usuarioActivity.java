@@ -57,6 +57,7 @@ public class usuarioActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+                //validamos si los datos existen en la base de datos
                 if (snapshot.exists()){
                     String nombres = snapshot.child("nombre").getValue().toString();
                     String correos = snapshot.child("telefono").getValue().toString();

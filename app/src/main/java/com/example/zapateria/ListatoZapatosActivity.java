@@ -83,6 +83,8 @@ public class ListatoZapatosActivity extends AppCompatActivity {
         return true;
     }
 
+
+    //metodo para opciones de menu
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         super.onOptionsItemSelected(item);

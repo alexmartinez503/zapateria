@@ -81,6 +81,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(LoginActivity.this, "ingrese su contraseña", Toast.LENGTH_SHORT).show();
             txtpassword.requestFocus();
         }else{
+            //validamos si los datos existen dentro de la base de datos y sino no nos deja iniciar sesion
             userRef.child("users1").child(userID).child("id").setValue(mail,password);
             userRef.child("users1").child(userID).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                 @Override

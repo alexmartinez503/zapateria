@@ -97,7 +97,7 @@
         android:id="@+id/usuario_guardarbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/botones1"
+        android:background="@drawable/botones2"
         android:text="guardar"
         android:padding="10dp"
         android:layout_marginTop="10dp"
