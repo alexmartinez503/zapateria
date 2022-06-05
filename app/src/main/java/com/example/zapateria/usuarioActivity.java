@@ -58,16 +58,16 @@ public class usuarioActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 if (snapshot.exists()){
-                    String txtnombres = snapshot.child("nombre").getValue().toString();
-                    String txtcorreos = snapshot.child("telefono").getValue().toString();
-                    String txtphones = snapshot.child("telefono").getValue().toString();
-                    String txtpassw = snapshot.child("contraseña").getValue().toString();
+                    String nombres = snapshot.child("nombre").getValue().toString();
+                    String correos = snapshot.child("telefono").getValue().toString();
+                    String phones = snapshot.child("telefono").getValue().toString();
+                    String passw = snapshot.child("contraseña").getValue().toString();
 
                     //mostrar dentro de los campos de la activity los datos traidos de firebase
-                    txtnombre.setText(txtnombres);
-                    txtcorreo.setText(txtcorreos);
-                    txtphone.setText(txtphones);
-                    txtpass.setText(txtpassw);
+                    txtnombre.setText(nombres);
+                    txtcorreo.setText(correos);
+                    txtphone.setText(phones);
+                    txtpass.setText(passw);
 
                 }
 

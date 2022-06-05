@@ -87,19 +87,23 @@ public class ListatoZapatosActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         super.onOptionsItemSelected(item);
         if(item.getItemId() == R.id.menu_carrito){
-
+            Toast.makeText(ListatoZapatosActivity.this, "carrito", Toast.LENGTH_SHORT).show();
             activityCarrito();
         }
         if(item.getItemId() == R.id.menu_categoria){
+            Toast.makeText(ListatoZapatosActivity.this, "categoria", Toast.LENGTH_SHORT).show();
             activityCategoria();
         }
         if(item.getItemId() == R.id.menu_Buscar_pedido){
+            Toast.makeText(ListatoZapatosActivity.this, "pedido", Toast.LENGTH_SHORT).show();
             activityBuscar();
         }
         if(item.getItemId() == R.id.menu_usuario){
+            Toast.makeText(ListatoZapatosActivity.this, "usuario", Toast.LENGTH_SHORT).show();
             activityUsuario();
         }
         if(item.getItemId() == R.id.menu_salir){
+            Toast.makeText(ListatoZapatosActivity.this, "salir", Toast.LENGTH_SHORT).show();
             auth.signOut();
         }
 
