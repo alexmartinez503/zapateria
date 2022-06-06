@@ -6,6 +6,11 @@
         android:title="Inicio"
         android:icon="@drawable/ic_home"/>
     <item
+        android:id="@+id/fragmentCuatro"
+        android:title="Ordenes"
+        android:icon="@drawable/ic_table"/>
+
+    <item
         android:id="@+id/fragmentDos"
         android:title="Inventario"
         android:icon="@drawable/ic_lista"/>
@@ -13,8 +18,5 @@
         android:id="@+id/fragmentTres"
         android:title="Perfil"
         android:icon="@drawable/ic_person"/>
-    <item
-        android:id="@+id/fragmentCuatro"
-        android:title="Categorias"
-        android:icon="@drawable/ic_table"/>
+
 </menu>

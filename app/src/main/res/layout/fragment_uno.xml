@@ -1,16 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".FragmentUno">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="FRAGMENTO UNO"
-        android:background="@color/black"
-        android:textColor="@color/white"/>
 
-</FrameLayout>
+        android:id="@+id/textox2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AGREGAR PRODUCTO"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:background="#1E3B55"
+        android:textColor="@color/white"
+        android:padding="15dp"
+        android:textStyle="bold|italic"
+        />
+
+    <LinearLayout
+        android:id="@+id/linear_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textox2"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/formales"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/formal" />
+
+        <ImageView
+            android:id="@+id/deportivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/deportivo" />
+
+        <ImageView
+            android:id="@+id/casuales"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/casual"/>
+
+        <ImageView
+            android:id="@+id/trabajos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/trabajo"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
