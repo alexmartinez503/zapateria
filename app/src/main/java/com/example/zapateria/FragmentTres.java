@@ -1,64 +1,179 @@
 package com.example.zapateria;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentTres#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.util.HashMap;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class FragmentTres extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private  View fragmento;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private EditText nombre, ciudad, direccion, telefono;
+    private Button guardar;
+    private String phone = "";
+    private CircleImageView imagen;
+    private FirebaseAuth auth;
+    private DatabaseReference UserRef;
+    private ProgressDialog dialog;
+    private String CurrentUserId;
+    private static int Galery_Pick = 1;
+    private StorageReference UserImagenPerfil;
+
+
+
+
 
     public FragmentTres() {
-        // Required empty public constructor
+
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentTres.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FragmentTres newInstance(String param1, String param2) {
-        FragmentTres fragment = new FragmentTres();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tres, container, false);
+        fragmento = inflater.inflate(R.layout.fragment_tres, container, false);
+
+        auth = FirebaseAuth.getInstance();
+        CurrentUserId = auth.getCurrentUser().getUid();
+        UserRef = FirebaseDatabase.getInstance().getReference().child("Admin");
+        dialog = new ProgressDialog(getContext());
+        UserImagenPerfil = FirebaseStorage.getInstance().getReference().child("Perfil");
+
+        nombre = (EditText) fragmento.findViewById(R.id.usuarioa_nombre);
+        ciudad = (EditText) fragmento.findViewById(R.id.usuarioa_ciudad);
+        direccion = (EditText) fragmento.findViewById(R.id.usuarioa_direccion);
+        telefono = (EditText) fragmento.findViewById(R.id.usuarioa_telefono);
+        guardar = (Button) fragmento.findViewById(R.id.usuarioa_boton);
+        imagen = (CircleImageView) fragmento.findViewById(R.id.usuarioa_imagen);
+
+        UserRef.child(CurrentUserId).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists() ){
+                    String nombres = snapshot.child("nombre").getValue().toString();
+                    String direcciones = snapshot.child("direccion").getValue().toString();
+                    String ciudades = snapshot.child("ciudad").getValue().toString();
+                    String telefonos = snapshot.child("telefono").getValue().toString();
+
+                    nombre.setText(nombres);
+                    direccion.setText(direcciones);
+                    ciudad.setText(ciudades);
+                    telefono.setText(telefonos);
+                }else if(snapshot.exists()){
+                    String nombres = snapshot.child("nombre").getValue().toString();
+                    String direcciones = snapshot.child("direccion").getValue().toString();
+                    String ciudades = snapshot.child("ciudad").getValue().toString();
+                    String telefonos = snapshot.child("telefono").getValue().toString();
+
+                    nombre.setText(nombres);
+                    direccion.setText(direcciones);
+                    ciudad.setText(ciudades);
+                    telefono.setText(telefonos);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        guardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                GuardarInformacion();
+            }
+        });
+
+
+
+        return fragmento;
+    }
+
+    private void GuardarInformacion() {
+        String nombres = nombre.getText().toString().toUpperCase();
+        String direcciones = direccion.getText().toString();
+        String ciudades = ciudad.getText().toString();
+        String phones = telefono.getText().toString();
+
+        if (TextUtils.isEmpty(nombres)) {
+            Toast.makeText(getContext(), "Ingrese el nombre", Toast.LENGTH_SHORT).show();
+        } else if (TextUtils.isEmpty(direcciones)) {
+            Toast.makeText(getContext(), "Ingrese su direccion", Toast.LENGTH_SHORT).show();
+        } else if (TextUtils.isEmpty(ciudades)) {
+            Toast.makeText(getContext(), "Ingrese  la ciudad", Toast.LENGTH_SHORT).show();
+        }else if (TextUtils.isEmpty(phones)) {
+            Toast.makeText(getContext(), "Ingrese su numero", Toast.LENGTH_SHORT).show();
+        }else{
+            dialog.setTitle("Guardando");
+            dialog.setMessage("Por favor espere");
+            dialog.show();
+            dialog.setCanceledOnTouchOutside(true);
+
+            HashMap map = new HashMap();
+            map.put("nombre", nombres);
+            map.put("direccion", direcciones);
+            map.put("ciudad", ciudades);
+            map.put("telefono", phones);
+            map.put("uid", CurrentUserId);
+
+            UserRef.child(CurrentUserId).updateChildren(map).addOnCompleteListener(new OnCompleteListener() {
+                @Override
+                public void onComplete(@NonNull Task task) {
+                    if (task.isSuccessful()){
+                        EnviarAlInicio();
+                        dialog.dismiss();
+                    }else {
+                        String mensaje = task.getException().toString();
+                        Toast.makeText(getContext(), "Error: "+mensaje, Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                }
+            });
+        }
+    }
+
+    private void EnviarAlInicio() {
+        Intent intent = new Intent(getContext(), AdminActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        startActivity(intent);
     }
 }
+
+
+
+
+
+
+

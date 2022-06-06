@@ -1,16 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".FragmentTres">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="FRAGMENTO TRES"
-        android:background="@color/black"
-        android:textColor="@color/white"/>
 
-</FrameLayout>
+    <TextView
+    android:id="@+id/encabezado"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="COMPLETE SUS DATOS"
+    android:layout_centerHorizontal="true"
+    android:textAlignment="center"
+    android:background="#1E3B55"
+    android:textColor="@color/white"
+    android:padding="15dp"
+    android:textStyle="bold|italic"
+    />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/usuarioa_imagen"
+        android:layout_width="192dp"
+        android:layout_height="217dp"
+        android:layout_below="@+id/encabezado"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/login1"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="2dp" />
+
+    <EditText
+        android:id="@+id/usuarioa_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/usuarioa_imagen"
+        android:background="@drawable/black"
+        android:hint="Ingrese su nombre"
+        android:inputType="textPersonName"
+        android:padding="12dp"
+        android:textColor="@color/white"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/white"
+        android:textSize="22dp"
+        />
+
+    <EditText
+        android:id="@+id/usuarioa_direccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/usuarioa_nombre"
+        android:background="@drawable/black"
+        android:hint="Ingrese su direccion"
+        android:inputType="textPersonName"
+        android:padding="12dp"
+        android:textColor="@color/white"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/white"
+        android:textSize="22dp"
+        />
+
+    <EditText
+        android:id="@+id/usuarioa_telefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/usuarioa_direccion"
+        android:background="@drawable/black"
+        android:hint="Ingrese su telefono"
+        android:inputType="textPersonName"
+        android:padding="12dp"
+        android:textColor="@color/white"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/white"
+        android:textSize="22dp"
+        />
+
+    <EditText
+        android:id="@+id/usuarioa_ciudad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/usuarioa_telefono"
+        android:background="@drawable/black"
+        android:hint="Ingrese su ciudad"
+        android:inputType="textPersonName"
+        android:padding="12dp"
+        android:textColor="@color/white"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/white"
+        android:textSize="22dp"
+        />
+
+    <Button
+        android:id="@+id/usuarioa_boton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/usuarioa_ciudad"
+        android:background="@drawable/botones2"
+        android:text="GUARDAR"
+        android:inputType="textPersonName"
+        android:padding="12dp"
+        android:textColor="@color/white"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/white"
+        android:textSize="20dp"
+        />
+
+
+</RelativeLayout>

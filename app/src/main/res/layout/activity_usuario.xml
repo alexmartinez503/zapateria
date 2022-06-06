@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -23,6 +23,7 @@
         android:id="@+id/usuario_imageView7"
         android:layout_width="match_parent"
         android:layout_height="250dp"
+        android:layout_below="@+id/usuario_titilo"
         app:srcCompat="@drawable/login1" />
 
 
@@ -30,6 +31,7 @@
         android:id="@+id/usuario_txtnombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/usuario_imageView7"
         android:background="@drawable/black"
         android:hint="Nombre completo"
         android:inputType="textPersonName"
@@ -46,6 +48,7 @@
         android:id="@+id/usuario_txtphone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/usuario_txtnombre"
         android:background="@drawable/black"
         android:padding="12dp"
         android:textColor="@color/white"
@@ -63,6 +66,7 @@
         android:id="@+id/usuario_txtcorreo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/usuario_txtphone"
         android:background="@drawable/black"
         android:hint="Correo electrónico"
         android:padding="12dp"
@@ -80,6 +84,7 @@
         android:id="@+id/usuario_txtpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/usuario_txtcorreo"
         android:background="@drawable/black"
         android:padding="12dp"
         android:layout_marginTop="10dp"
@@ -98,6 +103,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/botones2"
+        android:layout_below="@+id/txtpassword"
         android:text="guardar"
         android:padding="10dp"
         android:layout_marginTop="10dp"
@@ -108,4 +114,4 @@
         />
 
 
-</LinearLayout>
+</RelativeLayout>
