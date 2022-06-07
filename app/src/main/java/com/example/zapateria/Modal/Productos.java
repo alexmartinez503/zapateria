@@ -3,11 +3,10 @@ package com.example.zapateria.Modal;
 
 public class Productos {
 
-    private  String nombre, descripcion, precioven, categoria , pid , fecha , hora;
-
+    private  String nombre, descripcion, precioven, categoria , pid , fecha , hora, cantidad, preciocom;
     public  Productos(){}
 
-    public Productos(String nombre, String descripcion, String precioven, String categoria, String pid, String fecha, String hora) {
+    public Productos(String nombre, String descripcion, String precioven, String categoria, String pid, String fecha, String hora, String cantidad, String preciocom) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precioven = precioven;
@@ -15,6 +14,8 @@ public class Productos {
         this.pid = pid;
         this.fecha = fecha;
         this.hora = hora;
+        this.cantidad = cantidad;
+        this.preciocom = preciocom;
     }
 
     public String getNombre() {
@@ -71,5 +72,21 @@ public class Productos {
 
     public void setHora(String hora) {
         this.hora = hora;
+    }
+
+    public String getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public String getPreciocom() {
+        return preciocom;
+    }
+
+    public void setPreciocom(String preciocom) {
+        this.preciocom = preciocom;
     }
 }
