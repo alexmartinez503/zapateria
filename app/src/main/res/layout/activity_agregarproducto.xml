@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#555050"
+    android:background="@color/black"
     tools:context=".AgregarproductoActivity">
 
     <TextView
@@ -21,29 +21,19 @@
         android:textStyle="bold|italic"
         />
 
-    <ImageView
-        android:id="@+id/imagenpro"
-        android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:layout_below="@+id/textox"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:cropToPadding="false"
-        android:scaleType="centerCrop"
-        android:src="@drawable/agregarimagen"
 
-        />
 
     <EditText
         android:id="@+id/nombrepro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imagenpro"
+        android:layout_below="@+id/textox"
         android:background="@drawable/black"
         android:hint="Nombre del producto"
-        android:inputType="textMultiLine"
+        android:inputType="text"
         android:padding="12dp"
         android:textColor="@color/white"
+        android:layout_marginTop="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="15dp"
@@ -69,14 +59,51 @@
         android:textSize="22dp"
         />
     <EditText
-        android:id="@+id/preciopro"
+        android:id="@+id/preciocomprapro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/descripcionpro"
         android:background="@drawable/black"
-        android:hint="Precio del producto"
-        android:inputType="textMultiLine"
+        android:hint="Precio de venta"
+        android:inputType="numberDecimal"
         android:padding="12dp"
+        android:textColor="@color/white"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/white"
+        android:textSize="22dp"
+        />
+
+    <EditText
+        android:id="@+id/precioventapro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/preciocomprapro"
+        android:background="@drawable/black"
+        android:hint="Precio de compra"
+        android:inputType="numberDecimal"
+        android:padding="12dp"
+        android:textColor="@color/white"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/white"
+        android:textSize="22dp"
+        />
+
+    <EditText
+        android:id="@+id/cantidadpro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/precioventapro"
+        android:background="@drawable/black"
+        android:hint="Cantidad"
+        android:inputType="number"
+        android:padding="12dp"
+
         android:textColor="@color/white"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
@@ -90,10 +117,10 @@
         android:id="@+id/agregarpro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/preciopro"
+        android:layout_below="@+id/cantidadpro"
         android:background="@drawable/botones2"
         android:text="Agregar producto"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
         android:padding="12dp"
         android:textColor="@color/white"
         android:layout_marginStart="20dp"

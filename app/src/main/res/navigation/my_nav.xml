@@ -26,6 +26,11 @@
         android:name="com.example.zapateria.FragmentCuatro"
         android:label="fragment_cuatro"
         tools:layout="@layout/fragment_cuatro" />
+    <fragment
+        android:id="@+id/fragmentProductos"
+        android:name="com.example.zapateria.ProductosFragment"
+        android:label="fragment_productos"
+        tools:layout="@layout/fragment_productos" />
 
 
 </navigation>

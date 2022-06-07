@@ -51,6 +51,9 @@ public class AdminActivity extends AppCompatActivity {
             if (item.getItemId() == R.id.fragmentUno){
                 Fragmentos(new FragmentUno());
             }
+            if (item.getItemId() == R.id.fragmentProductos){
+                Fragmentos(new ProductosFragment());
+            }
             if (item.getItemId() == R.id.fragmentDos){
                 Fragmentos(new FragmentDos());
             }

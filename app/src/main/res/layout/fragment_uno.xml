@@ -31,7 +31,7 @@
         android:layout_marginTop="10dp">
 
         <ImageView
-            android:id="@+id/formales"
+            android:id="@+id/formale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/formal" />
@@ -43,13 +43,13 @@
             android:src="@drawable/deportivo" />
 
         <ImageView
-            android:id="@+id/casuales"
+            android:id="@+id/casuale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/casual"/>
 
         <ImageView
-            android:id="@+id/trabajos"
+            android:id="@+id/trabajo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/trabajo"/>

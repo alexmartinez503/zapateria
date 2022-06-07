@@ -6,6 +6,10 @@
         android:title="Inicio"
         android:icon="@drawable/ic_home"/>
     <item
+        android:id="@+id/fragmentProductos"
+        android:title="Productos"
+        android:icon="@drawable/ic_lista"/>
+    <item
         android:id="@+id/fragmentCuatro"
         android:title="Ordenes"
         android:icon="@drawable/ic_table"/>

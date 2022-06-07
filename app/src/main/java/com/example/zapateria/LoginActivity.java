@@ -18,8 +18,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 
@@ -81,20 +83,34 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(LoginActivity.this, "ingrese su contraseña", Toast.LENGTH_SHORT).show();
             txtpassword.requestFocus();
         }else{
-            //validamos si los datos existen dentro de la base de datos y sino no nos deja iniciar sesion
-            userRef.child("users1").child(userID).child("id").setValue(mail,password);
-            userRef.child("users1").child(userID).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            //importar datos desde firebase
+//importar datos desde firebase
+            userRef.child(userID).addValueEventListener(new ValueEventListener() {
                 @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    if (task.isSuccessful()) {
-                        Intent intent= new Intent(LoginActivity.this, ListatoZapatosActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                    //validamos si los datos existen en la base de datos
+                    if (snapshot.exists()){
+                        String correos = snapshot.child("correo").getValue().toString();
+                        String passw = snapshot.child("contraseña").getValue().toString();
+
+                        //mostrar dentro de los campos de la activity los datos traidos de firebase
+
+
+                        txtcorreo.setText(correos);
+                        txtpassword.setText(passw);
+
+                        Intent intent = new Intent(LoginActivity.this, ListatoZapatosActivity.class);
                         startActivity(intent);
-                        finish();
+
+
+                        Toast.makeText(LoginActivity.this, "error", Toast.LENGTH_SHORT).show();
                     }
-                    else {
-                        Log.e("firebase", "Error getting data", task.getException());
-                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
                 }
             });
         }
