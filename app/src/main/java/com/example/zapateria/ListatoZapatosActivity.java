@@ -127,7 +127,7 @@ public class ListatoZapatosActivity extends AppCompatActivity implements Navigat
                 holder.productImagn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(ListatoZapatosActivity.this, CarritoActivity.class);
+                        Intent intent = new Intent(ListatoZapatosActivity.this, ProductoDetallesActivity.class);
                         intent.putExtra("pid",model.getPid());
                         startActivity(intent);
                     }

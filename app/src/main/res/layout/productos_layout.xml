@@ -22,14 +22,15 @@
             android:textSize="20dp"
             android:textColor="@color/black"
             />
+
         <ImageView
             android:id="@+id/img_product1"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_below="@+id/producto1_name"
+            android:layout_marginTop="5dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/depo"
-            android:layout_marginTop="5dp"/>
+            android:src="@drawable/depo" />
         <TextView
             android:id="@+id/description_product1"
             android:layout_width="match_parent"
@@ -55,7 +56,7 @@
             android:id="@+id/precio_product1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Precio:"
+            android:text="Precio: 200"
             android:textSize="25dp"
             android:layout_marginStart="50dp"
             android:textColor="@color/black"
