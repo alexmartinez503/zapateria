@@ -17,7 +17,7 @@
             android:id="@+id/precio_total"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Total: 000"
+            android:text="CARRITO"
             android:textColor="@color/white"
             android:textAlignment="center"
             android:textSize="25dp"

@@ -1,9 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".confirmarPedidoActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/texto23"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Por favor confirme su pedido"
+        android:textSize="24dp"
+        android:textColor="@color/white"
+        android:layout_margin="15dp"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/final_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/black"
+        android:layout_below="@id/texto23"
+        android:padding="10dp"
+        android:hint="Nombre"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="35dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="22dp" />
+
+    <EditText
+        android:id="@+id/final_correo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/black"
+        android:layout_below="@id/final_nombre"
+        android:padding="10dp"
+        android:hint="Correo"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="35dp"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="22dp" />
+
+    <EditText
+        android:id="@+id/final_direccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/black"
+        android:layout_below="@id/final_correo"
+        android:padding="10dp"
+        android:hint="Direccion de entrega"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="35dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="22dp" />
+
+    <EditText
+        android:id="@+id/final_telefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/black"
+        android:layout_below="@id/final_direccion"
+        android:padding="10dp"
+        android:hint="Telefono"
+        android:inputType="number"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="35dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="22dp" />
+
+    <ImageView
+        android:id="@+id/imag"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo"
+        android:layout_below="@id/final_telefono"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+
+        />
+
+    <Button
+        android:id="@+id/final_botonConfirmar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/botones2"
+        android:padding="10dp"
+        android:text="Terminar la compra"
+       android:layout_below="@id/imag"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="35dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="22dp" />
+
+</RelativeLayout>
