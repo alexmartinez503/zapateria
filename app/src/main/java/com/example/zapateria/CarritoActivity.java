@@ -22,8 +22,11 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class CarritoActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
@@ -66,11 +69,7 @@ public class CarritoActivity extends AppCompatActivity {
         super.onStart();
 
         VerificarEstadoOrden();
-    }
-
-    private void VerificarEstadoOrden() {
-
-
+        precioTotal.setText("Total"+String.valueOf(precioTotalID));
         final DatabaseReference CarListRef = FirebaseDatabase.getInstance().getReference().child("Carrito");
 
         FirebaseRecyclerOptions<Carrito> options = new  FirebaseRecyclerOptions.Builder<Carrito>()
@@ -136,6 +135,7 @@ public class CarritoActivity extends AppCompatActivity {
         };
         recyclerView.setAdapter(adapter);
         adapter.startListening();
+    }
 
 
 
@@ -143,5 +143,36 @@ public class CarritoActivity extends AppCompatActivity {
 
 
 
+    private void VerificarEstadoOrden() {
+        DatabaseReference ordenRef;
+        ordenRef = FirebaseDatabase.getInstance().getReference().child("Ordenes").child(CurrentUserId);
+
+        ordenRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    String estado = snapshot.child("estado").getValue().toString();
+                    String nombre = snapshot.child("nombre").getValue().toString();
+                    if (estado.equals("Enviado")){
+                       precioTotal.setText("Estimado"+nombre+"Su pedido fue enviado");
+                       recyclerView.setVisibility(View.GONE);
+                       mensaje1.setText("Su pedido se enviara pronto");
+                       mensaje1.setVisibility(View.VISIBLE);
+                       siguiente.setVisibility(View.GONE);
+                    }else if (estado.equals("No enviado")){
+                        precioTotal.setText("Su orden esta siendo procesada");
+                        recyclerView.setVisibility(View.GONE);
+                        mensaje1.setVisibility(View.VISIBLE);
+                        siguiente.setVisibility(View.GONE);
+                        Toast.makeText(CarritoActivity.this, "Puedes comprar mas productos cuando el anterior finalice", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }

@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="15dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/teal_700"
         android:src="@drawable/card"/>
 
     <include layout="@layout/contenido_categorias"></include>

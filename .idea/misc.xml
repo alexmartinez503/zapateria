@@ -27,7 +27,7 @@
         <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/ZAPATERIAADOC/zapateria/app/src/main/res/layout/activity_setup.xml" value="0.1" />
         <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/ZAPATERIAADOC/zapateria/app/src/main/res/layout/activity_setup_admin.xml" value="0.1" />
         <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/ZAPATERIAADOC/zapateria/app/src/main/res/layout/activity_usuario.xml" value="0.16" />
-        <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/ZAPATERIAADOC/zapateria/app/src/main/res/layout/app_list_categorias.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/ZAPATERIAADOC/zapateria/app/src/main/res/layout/app_list_categorias.xml" value="0.1" />
         <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/ZAPATERIAADOC/zapateria/app/src/main/res/layout/car_item_layout.xml" value="0.264" />
         <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/ZAPATERIAADOC/zapateria/app/src/main/res/layout/contenido_categorias.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/ZAPATERIAADOC/zapateria/app/src/main/res/layout/fragment_cuatro.xml" value="0.2" />
@@ -36,6 +36,7 @@
         <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/ZAPATERIAADOC/zapateria/app/src/main/res/layout/fragment_tres.xml" value="0.2" />
         <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/ZAPATERIAADOC/zapateria/app/src/main/res/layout/fragment_uno.xml" value="0.264" />
         <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/ZAPATERIAADOC/zapateria/app/src/main/res/layout/nav_header.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/ZAPATERIAADOC/zapateria/app/src/main/res/layout/ordenes_layout.xml" value="0.264" />
         <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/ZAPATERIAADOC/zapateria/app/src/main/res/layout/producto_item_layout.xml" value="0.264" />
         <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/ZAPATERIAADOC/zapateria/app/src/main/res/layout/productos_layout.xml" value="0.2" />
         <entry key="..\:/Users/Bryan Alexander/Documents/INGENIERIA/ZAPATERIAADOC/zapateria/app/src/main/res/menu/menu_app.xml" value="0.27447916666666666" />
