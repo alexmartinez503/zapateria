@@ -12,19 +12,9 @@
             android:icon="@drawable/card"
             android:title="Carrito"
             />
-        <item
-            android:id="@+id/menu_categoria"
-            android:icon="@drawable/list"
-            android:title="Categoria"
 
-            />
 
-        <item
-            android:id="@+id/menu_Buscar_pedido"
-            android:icon="@drawable/buscar"
-            android:title="Buscar"
 
-            />
 
         <item
             android:id="@+id/menu_usuario"

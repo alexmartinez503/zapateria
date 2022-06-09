@@ -206,12 +206,7 @@ public class ListatoZapatosActivity extends AppCompatActivity implements Navigat
         int id = item.getItemId();
         if(id == R.id.menu_carrito){
             activityCarrito();
-        }
-        else if(id == R.id.menu_categoria){
-            activityCategoria();
-        }
-        else if(id == R.id.menu_Buscar_pedido){
-            activityBuscar();
+
         }
         else if(id == R.id.menu_usuario){
             activityUsuario();
