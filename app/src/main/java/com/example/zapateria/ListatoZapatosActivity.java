@@ -107,7 +107,7 @@ public class ListatoZapatosActivity extends AppCompatActivity implements Navigat
         super.onStart();
         FirebaseUser firebaseUser = auth.getCurrentUser();
         if (firebaseUser== null){
-            enviarLogin();
+
         }else{
             VerificarUsuario();
         }
@@ -256,12 +256,7 @@ public class ListatoZapatosActivity extends AppCompatActivity implements Navigat
         startActivity(intent);
         finish();
     }
-    private void enviarLogin() {
-        Intent intent = new Intent(ListatoZapatosActivity.this, LoginActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-        finish();
-    }
+
 
 
 }
